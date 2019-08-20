@@ -1,0 +1,40 @@
+* {
+  font-family: "Roboto";
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 96px;
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 60px;
+  letter-spacing: -0.5px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.subtitle-1 {
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.15px;
+}
+
+.title {
+  text-align: center;
+}
+
+a {
+  color: #202124;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
