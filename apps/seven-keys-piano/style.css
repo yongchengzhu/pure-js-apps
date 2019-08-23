@@ -1,10 +1,41 @@
+body {
+  background-color: black;
+  margin: 0;
+}
+
+.keys-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
 .key {
+  margin: 0 0.1rem;
+  position: relative;
   border: 1px solid black;
+  width: 5rem;
+  height: 15rem;
+  border-radius: 5px;
+  display: inline-block;
+  background-color: white;
+  transition: height 0.2s;
+}
+
+.key-sharp {
+  position: absolute;
+  background-color: pink;
   width: 50px;
   height: 50px;
-  display: inline-block;
+  z-index: 100;
+}
+
+span.letter {
+  position: absolute;
+  bottom: 0%;
 }
 
 .pressed {
   background-color: grey;
+  height: 13rem;
 }
