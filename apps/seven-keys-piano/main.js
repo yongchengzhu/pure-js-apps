@@ -5,6 +5,11 @@ const piano_F = document.querySelector('#piano_F');
 const piano_G = document.querySelector('#piano_G');
 const piano_H = document.querySelector('#piano_H');
 const piano_J = document.querySelector('#piano_J');
+const piano_W = document.querySelector('#piano_W');
+const piano_E = document.querySelector('#piano_E');
+const piano_T = document.querySelector('#piano_T');
+const piano_Y = document.querySelector('#piano_Y');
+const piano_U = document.querySelector('#piano_U');
 
 document.addEventListener('keydown', event => {
   if (event.key === 'a' || event.key === 'A') {
@@ -48,6 +53,32 @@ document.addEventListener('keydown', event => {
     piano_J.currentTime = 0;
     piano_J.play();
   }
+  // Sharps
+  if (event.key === 'w' || event.key === 'W') {
+    document.querySelector('#keyW').classList.add('pressed2');
+    piano_W.currentTime = 0;
+    piano_W.play();
+  }
+  if (event.key === 'e' || event.key === 'E') {
+    document.querySelector('#keyE').classList.add('pressed2');
+    piano_E.currentTime = 0;
+    piano_E.play();
+  }
+  if (event.key === 't' || event.key === 'T') {
+    document.querySelector('#keyT').classList.add('pressed2');
+    piano_T.currentTime = 0;
+    piano_T.play();
+  }
+  if (event.key === 'y' || event.key === 'Y') {
+    document.querySelector('#keyY').classList.add('pressed2');
+    piano_Y.currentTime = 0;
+    piano_Y.play();
+  }
+  if (event.key === 'u' || event.key === 'U') {
+    document.querySelector('#keyU').classList.add('pressed2');
+    piano_U.currentTime = 0;
+    piano_U.play();
+  }
 });
 
 document.addEventListener('keyup', event => {
@@ -78,5 +109,22 @@ document.addEventListener('keyup', event => {
 
   if (event.key === 'j' || event.key === 'J') {
     document.querySelector('#keyJ').classList.remove('pressed');
+  }
+
+  // Sharps
+  if (event.key === 'w' || event.key === 'W') {
+    document.querySelector('#keyW').classList.remove('pressed2');
+  }
+  if (event.key === 'e' || event.key === 'E') {
+    document.querySelector('#keyE').classList.remove('pressed2');
+  }
+  if (event.key === 't' || event.key === 'T') {
+    document.querySelector('#keyT').classList.remove('pressed2');
+  }
+  if (event.key === 'y' || event.key === 'Y') {
+    document.querySelector('#keyY').classList.remove('pressed2');
+  }
+  if (event.key === 'u' || event.key === 'U') {
+    document.querySelector('#keyU').classList.remove('pressed2');
   }
 })

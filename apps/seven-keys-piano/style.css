@@ -18,7 +18,7 @@ body {
 }
 
 .key {
-  margin: 0;
+  margin: 0 0.1rem;
   position: relative;
   vertical-align: top;
   border: 1px solid black;
@@ -41,26 +41,27 @@ body {
   left: 0;
   top: 0;
   border-radius: 5px;
+  transition: height 0.2s;
 }
 
 #keyW {
-  margin-left: 3.1rem;
+  margin-left: 3.2rem;
 }
 
 #keyE {
-  margin-left: 8.2rem;
+  margin-left: 8.6rem;
 }
 
 #keyT {
-  margin-left: 18.5rem;
+  margin-left: 19.3rem;
 }
 
 #keyY {
-  margin-left: 23.6rem;
+  margin-left: 24.5rem;
 }
 
 #keyU {
-  margin-left: 28.7rem;
+  margin-left: 30rem;
 }
 
 span.letter {
@@ -69,6 +70,13 @@ span.letter {
 }
 
 .pressed {
-  background-color: grey;
-  height: 13rem;
+  height: 14.9rem;
+  box-shadow: 0 0 10px red,
+              0 0 5px  red;
+}
+
+.pressed2 {
+  height: 9.4rem;
+  box-shadow: 0 0 10px red,
+              0 0 5px  red;
 }
