@@ -13,6 +13,8 @@ document.addEventListener('keydown', event => {
     const pianoSound = document.querySelector(`#piano_${event.key.toUpperCase()}`);
     pianoSound.currentTime = 0;
     pianoSound.play();
+
+    document.querySelector('#log').textContent = event.key.toUpperCase();
   }
 });
 
