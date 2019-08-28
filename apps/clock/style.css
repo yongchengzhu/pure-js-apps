@@ -3,10 +3,14 @@ body {
   padding: 0;
 }
 
-.clock {
-  border: 1px solid black;
-  width: 20rem;
-  height: 20rem;
-  border-radius: 20rem;
-  margin: auto;
+svg {
+  width: 100%;
+  height: 100vh;
+  /* To fix 2 extra pixel bug for 100vh. */
+  display: block;
+}
+
+#sec {
+  stroke: red;
+  stroke-width: 2;
 }
