@@ -12,5 +12,18 @@ svg {
 
 #sec {
   stroke: red;
+  stroke-width: 1;
+  transform-origin: 50% 50%;
+}
+
+#min {
+  stroke: green;
   stroke-width: 2;
+  transform-origin: 50% 50%;
+}
+
+#hr {
+  stroke: blue;
+  stroke-width: 3;
+  transform-origin: 50% 50%;
 }
