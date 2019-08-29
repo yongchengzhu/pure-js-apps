@@ -39,18 +39,12 @@ secText.setAttribute('font-size', 32);
 
 // Test: create SVG elements into DOM.
 for (let i = 0; i <= 360 - 6; i += 6) {
-  // let circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-  // circle.setAttribute('cx', getX(getRadian(i)));
-  // circle.setAttribute('cy', getY(getRadian(i)));
-  // circle.setAttribute('r', 5);
-  // circle.setAttribute('stroke', 'red');
-  // circle.setAttribute('fill', 'red');
-  // document.querySelector('svg').appendChild(circle);
   let line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-  line.setAttribute('x1', getX(getRadian(i)));
-  line.setAttribute('y1', getY(getRadian(i)));
-  line.setAttribute('x2', getX2(getRadian(i)));
-  line.setAttribute('y2', getY2(getRadian(i)));
+  let offset = i % 30 === 0? 20 : 10;
+  line.setAttribute('x1', getX(getRadian(i), radius));
+  line.setAttribute('y1', getY(getRadian(i), radius));
+  line.setAttribute('x2', getX(getRadian(i), radius - offset));
+  line.setAttribute('y2', getY(getRadian(i), radius - offset));
   line.setAttribute('stroke', 'orange');
   line.setAttribute('stroke-width', 1)
   document.querySelector('svg').appendChild(line);
@@ -86,18 +80,10 @@ function getHoursAngle(sec, min, hr) {
   return (hr + (min + sec / 60) / 60 ) / 12 * 360;
 }
 
-function getX(radian) {
+function getX(radian, radius) {
   return radius * Math.cos(radian) + (width / 2);
 }
 
-function getY(radian) {
+function getY(radian, radius) {
   return radius * Math.sin(radian) + (height / 2);
-}
-
-function getX2(radian) {
-  return (radius - 10) * Math.cos(radian) + (width / 2);
-}
-
-function getY2(radian) {
-  return (radius - 10) * Math.sin(radian) + (height / 2);
 }
