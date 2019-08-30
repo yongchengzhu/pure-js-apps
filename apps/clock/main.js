@@ -37,7 +37,7 @@ function draw() {
     line.setAttribute('y1', getY(getRadian(i), radius, height));
     line.setAttribute('x2', getX(getRadian(i), radius - offset, width));
     line.setAttribute('y2', getY(getRadian(i), radius - offset, height));
-    line.setAttribute('stroke', 'orange');
+    line.setAttribute('stroke', 'black');
     line.setAttribute('stroke-width', 1);
     line.setAttribute('class', 'ticks');
     document.querySelector('svg').appendChild(line);
@@ -65,11 +65,12 @@ function draw() {
 
   hrHand.setAttribute('x1', width / 2);
   hrHand.setAttribute('y1', height / 2);
-  hrHand.setAttribute('x2', getX(getRadian(getHoursAngle(sec, min, hr)), radius - 50, width));
-  hrHand.setAttribute('y2', getY(getRadian(getHoursAngle(sec, min, hr)), radius - 50, height));
+  hrHand.setAttribute('x2', getX(getRadian(getHoursAngle(sec, min, hr)), radius - 80, width));
+  hrHand.setAttribute('y2', getY(getRadian(getHoursAngle(sec, min, hr)), radius - 80, height));
 
-  secText.setAttribute('x', width / 2);
-  secText.setAttribute('y', height / 2);
+  const secTextBBox = secText.getBBox();
+  secText.setAttribute('x', width - 20);
+  secText.setAttribute('y', secTextBBox.height);
   secText.setAttribute('font-size', 32);
 }
 
