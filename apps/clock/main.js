@@ -9,14 +9,7 @@ draw();
 window.addEventListener('resize', draw);
 
 setInterval(() => {
-  const date = new Date();
-  const hr   = date.getHours();
-  const min  = date.getMinutes();
-  const sec  = date.getSeconds();
-  secText.innerHTML = `${hr}:${min}:${sec}`;
-  secHand.setAttribute('transform', `rotate(${ sec / 60 * 360 })`);
-  minHand.setAttribute('transform', `rotate(${ (min + (sec / 60)) / 60 * 360 })`);
-  hrHand .setAttribute('transform', `rotate(${ (hr + (min + sec / 60) / 60 ) / 12 * 360 })`)
+  draw();
 }, 1000);
 
 // -----------------------------------------------------------------------------
@@ -50,22 +43,31 @@ function draw() {
     document.querySelector('svg').appendChild(line);
   }
 
-  // Draw clock hands.
-  const secOffset = radius * 0.20;
-  const minOffset = radius * 0.40;
-  const hrOffset  = radius * 0.60;
+  // Get time.
+  const date = new Date();
+  const hr   = date.getHours();
+  const min  = date.getMinutes();
+  const sec  = date.getSeconds();
+
+  // Draw digital time.
+  secText.innerHTML = `${hr}:${min}:${sec}`;
+
+  // Draw hands.
   secHand.setAttribute('x1', width / 2);
   secHand.setAttribute('y1', height / 2);
-  secHand.setAttribute('x2', width / 2);
-  secHand.setAttribute('y2', 0 + secOffset);
-  minHand.setAttribute('x1', width / 2)
-  minHand.setAttribute('y1', height / 2)
-  minHand.setAttribute('x2', width / 2)
-  minHand.setAttribute('y2', 0 + minOffset);
-  hrHand.setAttribute('x1', width / 2)
-  hrHand.setAttribute('y1', height / 2)
-  hrHand.setAttribute('x2', width / 2)
-  hrHand.setAttribute('y2', 0 + hrOffset);
+  secHand.setAttribute('x2', getX(getRadian(getSecondsAngle(sec)), radius - 30, width));
+  secHand.setAttribute('y2', getY(getRadian(getSecondsAngle(sec)), radius - 30, height));
+
+  minHand.setAttribute('x1', width / 2);
+  minHand.setAttribute('y1', height / 2);
+  minHand.setAttribute('x2', getX(getRadian(getMinutesAngle(sec, min)), radius - 40, width));
+  minHand.setAttribute('y2', getY(getRadian(getMinutesAngle(sec, min)), radius - 40, height));
+
+  hrHand.setAttribute('x1', width / 2);
+  hrHand.setAttribute('y1', height / 2);
+  hrHand.setAttribute('x2', getX(getRadian(getHoursAngle(sec, min, hr)), radius - 50, width));
+  hrHand.setAttribute('y2', getY(getRadian(getHoursAngle(sec, min, hr)), radius - 50, height));
+
   secText.setAttribute('x', width / 2);
   secText.setAttribute('y', height / 2);
   secText.setAttribute('font-size', 32);
