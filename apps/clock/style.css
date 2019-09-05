@@ -6,24 +6,25 @@ body {
 svg {
   width: 100%;
   height: 100vh;
+  background-color: black;
   /* To fix 2 extra pixel bug for 100vh. */
   display: block;
 }
 
 #sec {
-  stroke: black;
+  stroke: white;
   stroke-width: 1;
   transform-origin: 50% 50%;
 }
 
 #min {
-  stroke: black;
+  stroke: white;
   stroke-width: 2;
   transform-origin: 50% 50%;
 }
 
 #hr {
-  stroke: black;
+  stroke: white;
   stroke-width: 3;
   transform-origin: 50% 50%;
 }

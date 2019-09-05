@@ -37,7 +37,7 @@ function draw() {
     line.setAttribute('y1', getY(getRadian(i), radius, height));
     line.setAttribute('x2', getX(getRadian(i), radius - offset, width));
     line.setAttribute('y2', getY(getRadian(i), radius - offset, height));
-    line.setAttribute('stroke', 'black');
+    line.setAttribute('stroke', 'white');
     line.setAttribute('stroke-width', 1);
     line.setAttribute('class', 'ticks');
     document.querySelector('svg').appendChild(line);
